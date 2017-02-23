@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<defaultContext xmlns="http://www.magiumlib.com/ConfigurationContext">
+    <context id="production" title="Production">
+        <context id="website1" title="Website 1"/>
+        <context id="website2" title="Website 2"/>
+    </context>
+    <context id="development" title="Development" />
+</defaultContext>

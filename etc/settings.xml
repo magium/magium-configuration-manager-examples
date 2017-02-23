@@ -1,0 +1,9 @@
+<configuration xmlns="http://www.magiumlib.com/Configuration">
+    <section id="section">
+        <group id="group">
+            <element id="element">
+                <value>Test Value</value>
+            </element>
+        </group>
+    </section>
+</configuration>
