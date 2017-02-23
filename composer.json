@@ -1,0 +1,21 @@
+{
+  "name": "magium/configuration-manager-examples",
+  "description": "Examples for the magium configuration manager",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kevin Schroeder",
+      "email": "kschroeder@magiumlib.com"
+    }
+  ],
+  "require": {
+    "magium/configuration-manager": "^0.8.19",
+    "zendframework/zend-di": "^2.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Magium\\Configuration\\Example\\": "lib"
+    }
+  }
+}
