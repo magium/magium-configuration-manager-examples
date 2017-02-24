@@ -10,8 +10,9 @@
     }
   ],
   "require": {
-    "magium/configuration-manager": "^0.8.19",
-    "zendframework/zend-di": "^2.6"
+    "magium/configuration-manager": "^0.8",
+    "zendframework/zend-di": "^2.6",
+    "magium/redis-factory": "^0.2.3"
   },
   "autoload": {
     "psr-4": {

@@ -6,7 +6,7 @@ $factory = new \Magium\Configuration\MagiumConfigurationFactory();
 $di = new \Zend\Di\Di();
 $di->instanceManager()->addSharedInstance(
     $factory->getManager()->getConfiguration(),
-    \Magium\Configuration\Config\Config::class
+    \Magium\Configuration\Config\ConfigurationRepository::class
 );
 $valueObject = $di->get(\Magium\Configuration\Example\ValueObject::class);
 

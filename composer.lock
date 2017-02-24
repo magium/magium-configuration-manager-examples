@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "01c2b7d9342f3944627c7582dd6df4a6",
+    "content-hash": "75af8d185dd0bda0d583aadda444df24",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -93,16 +93,16 @@
         },
         {
             "name": "magium/configuration-manager",
-            "version": "0.8.19",
+            "version": "0.8.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/magium/configuration-manager.git",
-                "reference": "5c7a505effe666bf952e20b06ee4bf10c9cda061"
+                "reference": "76b275c1483b1e0ff1566a87ce0bce537f7da9d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/magium/configuration-manager/zipball/5c7a505effe666bf952e20b06ee4bf10c9cda061",
-                "reference": "5c7a505effe666bf952e20b06ee4bf10c9cda061",
+                "url": "https://api.github.com/repos/magium/configuration-manager/zipball/76b275c1483b1e0ff1566a87ce0bce537f7da9d7",
+                "reference": "76b275c1483b1e0ff1566a87ce0bce537f7da9d7",
                 "shasum": ""
             },
             "require": {
@@ -133,7 +133,46 @@
                 }
             ],
             "description": "Provides a generic plugable configuration management interface similar to Magento",
-            "time": "2017-02-23T16:58:08+00:00"
+            "time": "2017-02-24T17:12:31+00:00"
+        },
+        {
+            "name": "magium/redis-factory",
+            "version": "0.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magium/mcm-redis-factory.git",
+                "reference": "6da8b770b8bb5ff0d513ac891368b92797062369"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magium/mcm-redis-factory/zipball/6da8b770b8bb5ff0d513ac891368b92797062369",
+                "reference": "6da8b770b8bb5ff0d513ac891368b92797062369",
+                "shasum": ""
+            },
+            "require": {
+                "magium/configuration-manager": "^0.8.21"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Magium\\RedisFactory\\": "lib"
+                },
+                "files": [
+                    "registration.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Schroeder",
+                    "email": "kschroeder@magiumlib.com"
+                }
+            ],
+            "description": "A simple factory for creating Redis objects using the Magium Configuration Manager",
+            "time": "2017-02-24T16:54:02+00:00"
         },
         {
             "name": "myclabs/deep-copy",
