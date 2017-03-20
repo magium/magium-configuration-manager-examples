@@ -12,7 +12,8 @@
   "require": {
     "magium/configuration-manager": "^0.8",
     "zendframework/zend-di": "^2.6",
-    "magium/redis-factory": "^0.2.3"
+    "magium/redis-factory": "^0.2.3",
+    "magium/zend-db-factory": "^0.0.2"
   },
   "autoload": {
     "psr-4": {
