@@ -17,7 +17,7 @@ $config = [
                 'methods'   => [
                     'factory'   => [
                         'config'    => [
-                            'type'      => \Magium\Configuration\Config\ConfigurationRepository::class,
+                            'type'      => \Magium\Configuration\Config\Repository\ConfigInterface::class,
                             'required'  => true
                         ]
                     ]
@@ -26,15 +26,10 @@ $config = [
         ]
     ]
 ];
-$factory = new \Magium\Configuration\MagiumConfigurationFactory();
+
 $di = new \Zend\Di\Di();
 $configuration = new \Zend\Di\Config($config);
 $configuration->configure($di);
-$di->instanceManager()->addSharedInstance(
-    $factory->getManager()->getConfiguration(),
-    \Magium\Configuration\Config\ConfigurationRepository::class
-);
-
 $adapter = $di->get(\Zend\Db\Adapter\Adapter::class);
 
 if ($adapter instanceof \Zend\Db\Adapter\Adapter) {

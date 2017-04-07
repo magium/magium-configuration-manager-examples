@@ -2,15 +2,14 @@
 
 namespace Magium\Configuration\Example;
 
-use Magium\Configuration\Config\Config;
-use Magium\Configuration\Config\ConfigurationRepository;
+use Magium\Configuration\Config\Repository\ConfigInterface;
 
 class ValueObject
 {
 
     protected $config;
 
-    public function __construct(ConfigurationRepository $config)
+    public function __construct(ConfigInterface $config)
     {
         $this->config = $config;
     }

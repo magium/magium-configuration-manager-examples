@@ -17,23 +17,24 @@ $config = [
                 'methods'   => [
                     'factory'   => [
                         'config'    => [
-                            'type'      => \Magium\Configuration\Config\ConfigurationRepository::class,
+                            'type'      => \Magium\Configuration\Config\Repository\ConfigInterface::class,
                             'required'  => true
                         ]
                     ]
+                ]
+            ],
+            \Magium\Configuration\Config\Repository\ConfigInterface::class => [
+                'instantiator'  => [
+                    \Magium\Configuration\MagiumConfigurationFactory::class,
+                    'configurationFactory'
                 ]
             ]
         ]
     ]
 ];
-$factory = new \Magium\Configuration\MagiumConfigurationFactory();
 $di = new \Zend\Di\Di();
 $configuration = new \Zend\Di\Config($config);
 $configuration->configure($di);
-$di->instanceManager()->addSharedInstance(
-    $factory->getManager()->getConfiguration(),
-    \Magium\Configuration\Config\ConfigurationRepository::class
-);
 
 $redis = $di->get(Redis::class);
 
