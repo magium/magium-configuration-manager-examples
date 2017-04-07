@@ -2,12 +2,22 @@
 
 require_once '../../vendor/autoload.php';
 
-$factory = new \Magium\Configuration\MagiumConfigurationFactory();
+$config = [
+    'definition'  => [
+        'class' => [
+            \Magium\Configuration\Config\Repository\ConfigInterface::class => [
+                'instantiator'  => [
+                    \Magium\Configuration\MagiumConfigurationFactory::class,
+                    'configurationFactory'
+                ]
+            ],
+        ]
+    ]
+];
+
 $di = new \Zend\Di\Di();
-$di->instanceManager()->addSharedInstance(
-    $factory->getManager()->getConfiguration(),
-    \Magium\Configuration\Config\ConfigurationRepository::class
-);
+$diConfig = new \Zend\Di\Config($config);
+$diConfig->configure($di);
 $valueObject = $di->get(\Magium\Configuration\Example\ValueObject::class);
 
 echo $valueObject->getValue();

@@ -7,13 +7,13 @@ require_once '../../vendor/autoload.php';
 $config = [
     'definition'  => [
         'class' => [
-            Redis::class => [
+            \Zend\Db\Adapter\Adapter::class => [
                 'instantiator' => [
-                    \Magium\RedisFactory\Factory::class,
+                    \Magium\ZendDbFactory\ZendDbFactory::class,
                     'factory'
                 ]
             ],
-            Magium\RedisFactory\Factory::class => [
+            Magium\ZendDbFactory\ZendDbFactory::class => [
                 'methods'   => [
                     'factory'   => [
                         'config'    => [
@@ -22,23 +22,18 @@ $config = [
                         ]
                     ]
                 ]
-            ],
-            \Magium\Configuration\Config\Repository\ConfigInterface::class => [
-                'instantiator'  => [
-                    \Magium\Configuration\MagiumConfigurationFactory::class,
-                    'configurationFactory'
-                ]
             ]
         ]
     ]
 ];
+
 $di = new \Zend\Di\Di();
 $configuration = new \Zend\Di\Config($config);
 $configuration->configure($di);
+$adapter = $di->get(\Zend\Db\Adapter\Adapter::class);
 
-$redis = $di->get(Redis::class);
+if ($adapter instanceof \Zend\Db\Adapter\Adapter) {
+    $sql = new \Zend\Db\Sql\Sql($adapter);
+    $sql->select('test')->where('a = 1');
 
-if ($redis instanceof \Redis) {
-    $var = $redis->keys('*');
-    var_dump($var);
 }
